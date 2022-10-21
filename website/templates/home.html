@@ -1,0 +1,62 @@
+{% extends "base.html" %} {% block title %}Synapse - Home{% endblock %}
+
+{% block style %}
+<style>
+    #card
+    {
+        width: 60vw;
+        height: 70vh;
+        margin: 0;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        border-radius: 30px;
+        box-shadow: 10px 10px 30px 10px rgba(0, 0, 0, 0.3);
+    }
+    #mini-card
+    {
+        width: 13.5vw;
+        height: 22vh;
+        margin: 0;
+        position: absolute;
+        top: 30%;
+        left: 15%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        border-radius: 30px;
+        box-shadow: 10px 10px 30px 10px rgba(0, 0, 0, 0.3);
+    }
+    #category
+    {
+        font-size: large;
+    }
+    #stat
+    {
+        font-weight: bold;
+    }
+    #spacer
+    {
+        margin: 0;
+        position: absolute;
+        top: 30%;
+        left: 40%;
+    }
+</style>
+{% endblock %}
+
+{% block script %}
+{% endblock %}
+
+{% block content %}
+<div id="card">
+    <p>your last stream of {{ ls['data'][0]['duration'] }} had {{ ls['data'][0]['view_count'] }} views!</p>
+    <div id="mini-card">
+        <div id="spacer">
+            <h1 id="stat">{{ ls['data'][0]['view_count'] }}</h1><br>
+            <h2 id="category">views</h2>
+        </div>
+    </div>
+</div>
+{% endblock %}
